@@ -14,6 +14,8 @@ export default {
         "darkish-blue": "#202b3b",
         "dark-cloud-blue": "#35455e",
         "pale-gray": "#828893",
+        "cloud-blue": "#0095ff",
+        "bright-gray": "#c4cad3",
       },
     },
   },

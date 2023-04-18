@@ -4,7 +4,7 @@ import axios from "axios";
 import Spinner from "./UI/Spinner";
 import Fade from "./UI/FadeAnimation";
 
-const ForecastSearch = () => {
+const ForecastSearch = ({ onCitySelectHandler }) => {
   const [cities, setCities] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +44,11 @@ const ForecastSearch = () => {
     };
   }, [keyword, citySearch, setCities]);
 
+  const citySelectHandler = (city) => {
+    setKeyword("");
+    onCitySelectHandler(`${city.lat},${city.lon}`);
+  };
+
   return (
     <div className="relative w-2/3 pr-5">
       <input
@@ -69,6 +74,7 @@ const ForecastSearch = () => {
                 <div
                   className="px-4 py-2 border-b-2 border-dark-cloud-blue text-white last:border-b-0 cursor-pointer hover:bg-dark-cloud-blue transition"
                   key={city.id}
+                  onClick={citySelectHandler.bind(null, city)}
                 >
                   <span className="text-lg">{city.name} </span>
                   <span className="text-pale-gray font-medium text-sm">

@@ -1,9 +1,9 @@
 import Sidebar from "./Sidebar";
-import sunIcon from "../assets/sun.png";
 import CurrentForecast from "./CurrentForecast";
 import TodaysForecast from "./TodaysForecast";
 import DetailedForecast from "./DetailedForecast";
 import WeeklyForecast from "./WeeklyForecast";
+import ForecastSearch from "./ForecastSearch";
 
 const App = () => {
   const forecast = {
@@ -6904,13 +6904,7 @@ const App = () => {
     <div className="container flex mx-auto space-x-8 py-16">
       <Sidebar />
       <div className="w-full space-y-8">
-        <div className="w-2/3 pr-5">
-          <input
-            className="w-full bg-darkish-blue rounded-lg p-4 text-white focus:outline-none"
-            type="text"
-            placeholder="Search for city..."
-          />
-        </div>
+        <ForecastSearch />
         <div className="flex space-x-8 w-full">
           <div className="w-2/3 space-y-8">
             <CurrentForecast

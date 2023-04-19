@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Card from "./UI/Card";
 import axios from "axios";
 import Spinner from "./UI/Spinner";
 import Fade from "./UI/FadeAnimation";
+import WeatherContext from "../store/weather-context";
 
-const ForecastSearch = ({ onCitySelectHandler }) => {
+const ForecastSearch = () => {
+  const context = useContext(WeatherContext);
   const [cities, setCities] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +48,7 @@ const ForecastSearch = ({ onCitySelectHandler }) => {
 
   const citySelectHandler = (city) => {
     setKeyword("");
-    onCitySelectHandler(`${city.lat},${city.lon}`);
+    context.changeLocation(`${city.lat},${city.lon}`);
   };
 
   return (

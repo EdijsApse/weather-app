@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import HourlyForecast from "./HourlyForecast";
 import Card from "./UI/Card";
+import WeatherContext from "../store/weather-context";
 
 const hours = [6, 9, 12, 15, 18, 21];
 
-const TodaysForecast = ({ forecastForToday }) => {
-  const forecastByHour = forecastForToday.hour.filter((hour) => {
+const TodaysForecast = () => {
+  const context = useContext(WeatherContext);
+  const forecastByHour = context.currentDaysForecast.hour.filter((hour) => {
     const date = new Date(hour.time);
     return hours.includes(date.getHours());
   });

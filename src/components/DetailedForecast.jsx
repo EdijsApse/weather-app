@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./UI/Card";
+import WeatherContext from "../store/weather-context";
 
-const DetailedForecast = ({ forecastForToday }) => {
+const DetailedForecast = () => {
+  const context = useContext(WeatherContext);
+  const currentDaysForecast = context.currentDaysForecast;
   const [isMoreDetailsVisible, setIsMoreDetailsVisible] = useState(false);
+
   return (
     <Card className="space-y-4">
       <div className="flex justify-between items-center">
@@ -30,8 +34,7 @@ const DetailedForecast = ({ forecastForToday }) => {
               <h2 className="text-md font-medium">Real feel</h2>
             </div>
             <h3 className="relative left-10 text-2xl font-bold text-white">
-              {forecastForToday.day.avgtemp_c}
-              <sup className="text-md relative -top-3">o</sup>
+              {`${currentDaysForecast.day.avgtemp_c}°C`}
             </h3>
           </div>
           <div>
@@ -42,7 +45,7 @@ const DetailedForecast = ({ forecastForToday }) => {
               <h2 className="text-md font-medium">Chance of rain</h2>
             </div>
             <h3 className="relative left-10 text-2xl font-bold text-white">
-              {`${forecastForToday.day.daily_chance_of_rain}%`}
+              {`${currentDaysForecast.day.daily_chance_of_rain}%`}
             </h3>
           </div>
           {isMoreDetailsVisible && (
@@ -54,7 +57,7 @@ const DetailedForecast = ({ forecastForToday }) => {
                 <h2 className="text-md font-medium">Sunrise</h2>
               </div>
               <h3 className="relative left-10 text-2xl font-bold text-white">
-                {forecastForToday.astro.sunrise}
+                {currentDaysForecast.astro.sunrise}
               </h3>
             </div>
           )}
@@ -68,7 +71,7 @@ const DetailedForecast = ({ forecastForToday }) => {
               <h2 className="text-md font-medium">Wind</h2>
             </div>
             <h3 className="relative left-10 text-2xl font-bold text-white">
-              {forecastForToday.day.maxwind_kph} km/h
+              {currentDaysForecast.day.maxwind_kph} km/h
             </h3>
           </div>
           <div>
@@ -79,7 +82,7 @@ const DetailedForecast = ({ forecastForToday }) => {
               <h2 className="text-md font-medium">UV index</h2>
             </div>
             <h3 className="relative left-10 text-2xl font-bold text-white">
-              {forecastForToday.day.uv}
+              {currentDaysForecast.day.uv}
             </h3>
           </div>
           {isMoreDetailsVisible && (
@@ -91,7 +94,7 @@ const DetailedForecast = ({ forecastForToday }) => {
                 <h2 className="text-md font-medium">Sunset</h2>
               </div>
               <h3 className="relative left-10 text-2xl font-bold text-white">
-                {forecastForToday.astro.sunset}
+                {currentDaysForecast.astro.sunset}
               </h3>
             </div>
           )}

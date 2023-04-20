@@ -31,7 +31,7 @@ const DetailedForecast = () => {
               <div className="w-10 text-xl">
                 <i className="fa-solid fa-temperature-low"></i>
               </div>
-              <h2 className="text-md font-medium">Real feel</h2>
+              <h2 className="text-md font-medium">Feels like</h2>
             </div>
             <h3 className="relative left-10 text-2xl font-bold text-white">
               {`${currentDaysForecast.day.avgtemp_c}°C`}

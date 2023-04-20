@@ -16,6 +16,7 @@ export default {
         "pale-gray": "#828893",
         "cloud-blue": "#0095ff",
         "bright-gray": "#c4cad3",
+        gold: "#ffd700",
       },
     },
   },

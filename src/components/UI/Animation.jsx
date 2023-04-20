@@ -1,9 +1,9 @@
 import CSSTransition from "react-transition-group/CSSTransition";
 
-const Fade = ({ children, isVisible }) => {
+const Animation = ({ children, isVisible, animationClass = "fade" }) => {
   return (
     <CSSTransition
-      classNames="fade"
+      classNames={animationClass}
       timeout={300}
       in={isVisible}
       mountOnEnter
@@ -14,4 +14,4 @@ const Fade = ({ children, isVisible }) => {
   );
 };
 
-export default Fade;
+export default Animation;

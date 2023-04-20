@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import Card from "./UI/Card";
 import axios from "axios";
 import Spinner from "./UI/Spinner";
-import Fade from "./UI/FadeAnimation";
+import Animation from "./UI/Animation";
 import WeatherContext from "../store/weather-context";
 
 const ForecastSearch = () => {
@@ -62,7 +62,7 @@ const ForecastSearch = () => {
         }}
         value={keyword}
       />
-      <Fade isVisible={isValidSearchParam}>
+      <Animation isVisible={isValidSearchParam}>
         <div className="absolute top-full pr-5 left-0 w-full z-10">
           <Card className="rounded-lg !p-2 mt-2 max-h-40 overflow-auto">
             {isLoading ? (
@@ -87,7 +87,7 @@ const ForecastSearch = () => {
             )}
           </Card>
         </div>
-      </Fade>
+      </Animation>
     </div>
   );
 };

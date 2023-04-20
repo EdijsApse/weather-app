@@ -5,6 +5,7 @@ import WeatherContext, {
   CITIES_PAGE,
   FORECAST_PAGE,
 } from "../store/weather-context";
+import Cities from "../pages/Cities";
 
 const App = () => {
   const context = useContext(WeatherContext);
@@ -12,7 +13,7 @@ const App = () => {
     <div className="container flex mx-auto space-x-8 py-16">
       <Sidebar />
       {context.selectedPage === FORECAST_PAGE && <Forecast />}
-      {context.selectedPage === CITIES_PAGE && <h1>Cities page</h1>}
+      {context.selectedPage === CITIES_PAGE && <Cities />}
     </div>
   );
 };

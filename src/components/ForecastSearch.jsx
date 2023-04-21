@@ -3,7 +3,7 @@ import Card from "./UI/Card";
 import axios from "axios";
 import Spinner from "./UI/Spinner";
 import Animation from "./UI/Animation";
-import WeatherContext from "../store/weather-context";
+import WeatherContext, { isInFavoriteList } from "../store/weather-context";
 
 const ForecastSearch = () => {
   const context = useContext(WeatherContext);
@@ -78,10 +78,29 @@ const ForecastSearch = () => {
                   key={city.id}
                   onClick={citySelectHandler.bind(null, city)}
                 >
-                  <span className="text-lg">{city.name} </span>
-                  <span className="text-pale-gray font-medium text-sm">
-                    - {city.country}
-                  </span>
+                  <div className="flex items-center">
+                    <span className="text-lg">{city.name} </span>
+                    <span className="text-pale-gray font-medium text-sm">
+                      - {city.country}
+                    </span>
+                    {isInFavoriteList(context.favoriteList, city.name) ? (
+                      <i
+                        className="ml-auto fa-solid fa-star text-gold text-2xl transition hover:text-white"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          context.removeFromFavoriteList(city.name);
+                        }}
+                      ></i>
+                    ) : (
+                      <i
+                        className="ml-auto fa-solid fa-star text-white text-2xl transition hover:text-gold"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          context.addToFavoriteList(city.name);
+                        }}
+                      ></i>
+                    )}
+                  </div>
                 </div>
               ))
             )}

@@ -1,6 +1,9 @@
 import { useContext, useState } from "react";
 import Animation from "./UI/Animation";
-import WeatherContext, { FORECAST_PAGE } from "../store/weather-context";
+import WeatherContext, {
+  FORECAST_PAGE,
+  isInFavoriteList,
+} from "../store/weather-context";
 
 const Continent = ({ cities, label, labelIcon }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,7 +68,23 @@ const Continent = ({ cities, label, labelIcon }) => {
                 >
                   {city}
                 </p>
-                <i className="fa-solid fa-star text-2xl text-pale-gray transition cursor-pointer hover:text-gold"></i>
+                {isInFavoriteList(context.favoriteList, city) ? (
+                  <i
+                    className="fa-solid fa-star text-gold text-2xl transition cursor-pointer hover:text-pale-gray"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      context.removeFromFavoriteList(city);
+                    }}
+                  ></i>
+                ) : (
+                  <i
+                    className="fa-solid fa-star text-2xl text-pale-gray transition cursor-pointer hover:text-gold"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      context.addToFavoriteList(city);
+                    }}
+                  ></i>
+                )}
               </div>
             );
           })}

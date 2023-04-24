@@ -7,12 +7,12 @@ const Link = ({ iconClass, label, onClickHandler, isActive }) => {
   return (
     <a
       href="#"
-      className={`text-center text-white text-sm p-2 hover:bg-dark-cloud-blue w-full rounded-lg transition ${
+      className={`flex justify-center items-center space-x-4 text-center text-white text-sm p-2 hover:bg-dark-cloud-blue w-full rounded-lg transition lg:space-x-0 lg:block ${
         isActive ? "bg-dark-cloud-blue" : ""
       }`}
       onClick={handleClick}
     >
-      <i className={`${iconClass} text-lg mb-2`}></i>
+      <i className={`${iconClass} text-sm lg:text-lg lg:mb-2`}></i>
       <span className="block">{label}</span>
     </a>
   );

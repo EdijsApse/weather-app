@@ -14,17 +14,17 @@ const Forecast = () => {
   const isLoading = context.isForecastLoading;
 
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-6 lg:space-y-8">
       <ForecastSearch />
       <Animation isVisible={isLoading}>
-        <div className="w-2/3 relative">
+        <div className="w-full xl:w-2/3 relative">
           <div className="absolute top-0 left-0 w-full">
             <Spinner large={true} />
           </div>
         </div>
       </Animation>
       {!forecast && !isLoading && (
-        <div className="w-2/3">
+        <div className="w-full xl:w-2/3">
           <h1 className="text-white text-center text-2xl py-4">
             No forecast found for this location
           </h1>
@@ -32,8 +32,8 @@ const Forecast = () => {
       )}
       {forecast && (
         <Animation isVisible={!isLoading}>
-          <div className="flex space-x-8 w-full">
-            <div className="w-2/3 space-y-8">
+          <div className="flex flex-col w-full space-y-6 xl:space-x-8 xl:space-y-0 xl:flex-row">
+            <div className="w-full space-y-6 xl:space-y-8 xl:w-2/3">
               <CurrentForecast />
               <TodaysForecast />
               <DetailedForecast />

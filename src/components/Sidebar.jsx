@@ -8,11 +8,11 @@ import WeatherContext, {
 const Sidebar = () => {
   const context = useContext(WeatherContext);
   return (
-    <div className="sticky top-16 w-22 bg-darkish-blue p-4 rounded-lg h-[calc(100vh-8rem)]">
-      <div className="flex items-center justify-center p-4 bg-dark-cloud-blue rounded-lg">
-        <i className="fa-solid fa-wind text-xl text-white"></i>
+    <div className="fixed flex space-x-6 bottom-0 left-0 z-10 w-full bg-darkish-blue p-4 lg:rounded-lg lg:space-x-0 lg:h-[calc(100vh-8rem)] lg:flex-col lg:sticky lg:top-16 lg:w-[7rem]">
+      <div className="flex items-center justify-center p-2 px-4 bg-dark-cloud-blue rounded-lg lg:p-4">
+        <i className="fa-solid fa-wind text-white text-sm lg:text-xl"></i>
       </div>
-      <div className="space-y-4 flex flex-col items-center mt-10">
+      <div className="flex items-center space-x-6 w-full justify-center lg:space-x-0 lg:mt-10 lg:flex-col lg:space-y-4">
         <Link
           label="Weather"
           iconClass="fa-solid fa-cloud-sun-rain"

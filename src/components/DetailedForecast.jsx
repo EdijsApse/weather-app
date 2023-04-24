@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import Card from "./UI/Card";
 import WeatherContext from "../store/weather-context";
+import SingleDetail from "./SingleDetail";
 
 const DetailedForecast = () => {
   const context = useContext(WeatherContext);
@@ -26,77 +27,41 @@ const DetailedForecast = () => {
       </div>
       <div className="flex">
         <div className="w-1/2 space-y-4">
-          <div>
-            <div className="flex text-pale-gray items-center">
-              <div className="w-10 text-xl">
-                <i className="fa-solid fa-temperature-low"></i>
-              </div>
-              <h2 className="text-md font-medium">Feels like</h2>
-            </div>
-            <h3 className="relative left-10 text-2xl font-bold text-white">
-              {`${currentDaysForecast.day.avgtemp_c}°C`}
-            </h3>
-          </div>
-          <div>
-            <div className="flex text-pale-gray items-center">
-              <div className="w-10 text-xl">
-                <i className="fa-solid fa-droplet"></i>
-              </div>
-              <h2 className="text-md font-medium">Chance of rain</h2>
-            </div>
-            <h3 className="relative left-10 text-2xl font-bold text-white">
-              {`${currentDaysForecast.day.daily_chance_of_rain}%`}
-            </h3>
-          </div>
+          <SingleDetail
+            label="Feels like"
+            iconClass="fa-solid fa-temperature-low"
+            value={`${currentDaysForecast.day.avgtemp_c}°C`}
+          />
+          <SingleDetail
+            label="Chance of rain"
+            iconClass="fa-solid fa-droplet"
+            value={`${currentDaysForecast.day.daily_chance_of_rain}%`}
+          />
           {isMoreDetailsVisible && (
-            <div>
-              <div className="flex text-pale-gray items-center">
-                <div className="w-10 text-xl">
-                  <i className="fa-solid fa-up-long"></i>
-                </div>
-                <h2 className="text-md font-medium">Sunrise</h2>
-              </div>
-              <h3 className="relative left-10 text-2xl font-bold text-white">
-                {currentDaysForecast.astro.sunrise}
-              </h3>
-            </div>
+            <SingleDetail
+              label="Sunrise"
+              iconClass="fa-solid fa-up-long"
+              value={currentDaysForecast.astro.sunrise}
+            />
           )}
         </div>
         <div className="w-1/2 space-y-4">
-          <div>
-            <div className="flex text-pale-gray items-center">
-              <div className="w-10 text-xl">
-                <i className="fa-solid fa-wind"></i>
-              </div>
-              <h2 className="text-md font-medium">Wind</h2>
-            </div>
-            <h3 className="relative left-10 text-2xl font-bold text-white">
-              {currentDaysForecast.day.maxwind_kph} km/h
-            </h3>
-          </div>
-          <div>
-            <div className="flex text-pale-gray items-center">
-              <div className="w-10 text-xl">
-                <i className="fa-solid fa-sun"></i>
-              </div>
-              <h2 className="text-md font-medium">UV index</h2>
-            </div>
-            <h3 className="relative left-10 text-2xl font-bold text-white">
-              {currentDaysForecast.day.uv}
-            </h3>
-          </div>
+          <SingleDetail
+            label="Wind"
+            iconClass="fa-solid fa-wind"
+            value={`${currentDaysForecast.day.maxwind_kph} km/h`}
+          />
+          <SingleDetail
+            label="UV index"
+            iconClass="fa-solid fa-sun"
+            value={currentDaysForecast.day.uv}
+          />
           {isMoreDetailsVisible && (
-            <div>
-              <div className="flex text-pale-gray items-center">
-                <div className="w-10 text-xl">
-                  <i className="fa-solid fa-down-long"></i>
-                </div>
-                <h2 className="text-md font-medium">Sunset</h2>
-              </div>
-              <h3 className="relative left-10 text-2xl font-bold text-white">
-                {currentDaysForecast.astro.sunset}
-              </h3>
-            </div>
+            <SingleDetail
+              label="Sunset"
+              iconClass="fa-solid fa-down-long"
+              value={currentDaysForecast.astro.sunset}
+            />
           )}
         </div>
       </div>

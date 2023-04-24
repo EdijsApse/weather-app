@@ -52,9 +52,9 @@ const ForecastSearch = () => {
   };
 
   return (
-    <div className="relative w-2/3 pr-5">
+    <div className="relative w-full xl:w-2/3 xl:pr-5">
       <input
-        className="w-full bg-darkish-blue rounded-lg p-4 text-white focus:outline-none"
+        className="w-full bg-darkish-blue rounded-lg py-3 p-4 text-white focus:outline-none xl:py-4"
         type="text"
         placeholder="Search for city..."
         onChange={(e) => {
@@ -63,7 +63,7 @@ const ForecastSearch = () => {
         value={keyword}
       />
       <Animation isVisible={isValidSearchParam}>
-        <div className="absolute top-full pr-5 left-0 w-full z-10">
+        <div className="absolute top-full left-0 w-full z-10 xl:pr-5">
           <Card className="rounded-lg !p-2 mt-2 max-h-40 overflow-auto">
             {isLoading ? (
               <Spinner />
@@ -80,7 +80,7 @@ const ForecastSearch = () => {
                 >
                   <div className="flex items-center">
                     <span className="text-lg">{city.name} </span>
-                    <span className="text-pale-gray font-medium text-sm">
+                    <span className="relative text-pale-gray font-medium text-sm top-[2px] left-1">
                       - {city.country}
                     </span>
                     {isInFavoriteList(context.favoriteList, city.name) ? (

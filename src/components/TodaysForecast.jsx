@@ -12,11 +12,11 @@ const TodaysForecast = () => {
     return hours.includes(date.getHours());
   });
   return (
-    <Card className="space-y-6">
+    <Card className="space-y-6 pb-0 md:pb-8">
       <h3 className="text-pale-gray text-sm font-bold uppercase">
         Today's forecast
       </h3>
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {forecastByHour.map((forecast) => (
           <HourlyForecast key={forecast.time} forecast={forecast} />
         ))}

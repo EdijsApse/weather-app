@@ -153,9 +153,9 @@ const AustraliaCities = [
 const Cities = () => {
   return (
     <div className="w-full">
-      <div className="w-full flex space-x-8">
-        <Card className="w-2/3">
-          <div className="space-y-8">
+      <div className="w-full flex-col flex space-y-6 lg:flex-row lg:space-y-0 lg:space-x-8">
+        <Card className="w-full pb-6 lg:w-2/3">
+          <div className="space-y-4 xl:space-y-8">
             <Continent
               cities={EuropeCapitals}
               label="Europe"
@@ -188,7 +188,7 @@ const Cities = () => {
             />
           </div>
         </Card>
-        <Card className="w-1/3 h-full">
+        <Card className="w-full h-full lg:w-1/3 lg:pb-8">
           <FavoriteList />
         </Card>
       </div>

@@ -10,7 +10,7 @@ const CurrentForecast = () => {
   );
 
   return (
-    <div className="flex justify-between items-center px-12">
+    <div className="flex justify-between items-center pl-4 lg:px-12">
       <div className="flex flex-col justify-between space-y-12">
         <div className="text-white space-y-2">
           <h2 className="text-4xl font-medium lg:text-5xl">

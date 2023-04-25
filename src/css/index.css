@@ -34,7 +34,7 @@ body {
 
 .slide-down-enter-active {
   max-height: 100vh;
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .slide-down-exit {

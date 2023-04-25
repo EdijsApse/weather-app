@@ -7,9 +7,9 @@ const FavoriteList = () => {
 
   return (
     <Fragment>
-      <div className="flex space-x-4 items-center mb-4">
-        <i className="fa-solid fa-star text-white text-2xl"></i>
-        <h3 className="text-xl text-white">Favorite List</h3>
+      <div className="flex space-x-4 items-center mb-2 xl:mb-4">
+        <i className="fa-solid fa-star text-white text-lg xl:text-2xl"></i>
+        <h3 className="text-lg text-white xl:text-xl">Favorite List</h3>
       </div>
       {favoriteItems.length === 0 && (
         <p className="text-xl pt-2 text-white">No cities added!</p>
@@ -17,12 +17,12 @@ const FavoriteList = () => {
       {favoriteItems.map((city) => {
         return (
           <div
-            className="py-4 border-b border-pale-gray text-white space-y-4 last:border-b-0 last:pb-0 cursor-pointer"
+            className="py-3 border-b border-pale-gray text-white space-y-4 cursor-pointer last:border-b-0 last:pb-0 xl:py-4"
             key={city}
           >
             <div className="flex items-center">
               <span
-                className="text-lg text-pale-gray transition hover:text-white"
+                className="text-md text-pale-gray transition hover:text-white"
                 onClick={() => {
                   context.changeLocation(city);
                   context.changePage(FORECAST_PAGE);

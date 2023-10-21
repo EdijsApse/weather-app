@@ -10,7 +10,7 @@ const WeeklyForecast = () => {
   return (
     <Card className="w-full h-full !pb-2 xl:w-1/3">
       <h3 className="text-pale-gray text-sm font-bold uppercase">
-        7-Day forecast
+        3-Day forecast
       </h3>
       <div className="flex flex-col">
         {days.map((forecast) => (

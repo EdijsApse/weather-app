@@ -2,6 +2,8 @@
 
 Weather App lets you search for any city and receive detailed, 3-day weather forecasts.
 
+<img src="https://github.com/EdijsApse/weather-app/blob/main/screen_shots/Screen_1.png" />
+
 ### Built With
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />&ensp;<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />&ensp;<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />

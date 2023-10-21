@@ -12,12 +12,14 @@ Weather App is a small WEB Application that lets you search for any city and rec
 
 ## ⚙️ Prerequisites
 
+Make sure you have installed all of the following prerequisites on your development machine
+
 1. Node.JS installed
 2. Node Package Manager installed
 
 ## 📋 Getting Started
 
-Follow the instructions to setup this project locally!
+Follow the instructions to setup this project locally
 
 1. Clone Weather App repository.
 2. Run `npm install` to install node packages.

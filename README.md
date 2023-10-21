@@ -1,6 +1,6 @@
 ## About The Project
 
-Weather App lets you search for any city and receive detailed, 3-day weather forecasts.
+Weather App is a small WEB Application that lets you search for any city and receive detailed, 3-day weather forecasts. You can also save cities in your favorite list to access them faster and check the upcoming forecast.
 
 <img src="https://github.com/EdijsApse/weather-app/blob/main/screen_shots/Screen_1.png" />
 
